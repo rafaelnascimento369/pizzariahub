@@ -59,9 +59,8 @@ flowchart TD
     * HTML5
     * CSS3
     * JavaScript
-* **Backend:** (Exemplo)
-    * Node.js
-    * Express
+* **Backend:**
+    * Spring
     * MongoDB
 * **Outras Ferramentas:** (Exemplo)
     * Git

@@ -43,3 +43,6 @@ body {
 .titulo-form{
   color: #e63946;
 }
+img {
+  flex-direction: row;
+}

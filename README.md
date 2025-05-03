@@ -21,6 +21,8 @@ Para visualizar o esboço inicial da arquitetura e o fluxo da aplicação, acess
 [https://mm.tt/app/map/3682693930?t=isPg9SDs37](https://mm.tt/app/map/3682693930?t=isPg9SDs37)
 
 
+## Fluxograma - Menus
+```mermaid    
 flowchart TD
     A((Página Inicial)) --> B(Promoções Exibidas)
     B -- "Clique em promoção" --> C[Carrinho de Compras]
@@ -48,6 +50,7 @@ flowchart TD
     S -- Sucesso --> T[Confirmação ao Usuário]
     Q -- Não --> P
 
+```
 
 ## Tecnologias Utilizadas
 

@@ -20,6 +20,38 @@ Para visualizar o esboço inicial da arquitetura e o fluxo da aplicação, acess
 
 [https://mm.tt/app/map/3682693930?t=isPg9SDs37](https://mm.tt/app/map/3682693930?t=isPg9SDs37)
 
+
+## Fluxograma - Menus
+```mermaid    
+flowchart TD
+    A((Página Inicial)) --> B(Promoções Exibidas)
+    B -- "Clique em promoção" --> C[Carrinho de Compras]
+    C --> D{Forma de Pagamento}
+    D --> E[Envia Pedido para Backend]
+    E --> F{Validação de Pagamento}
+    F -- Sucesso --> G[Confirmação do Pedido ao Usuário]
+    F -- Falha --> H[Erro e Retorno ao Carrinho]
+
+    A -- "Clique em Pedidos" --> I((Página de Pedidos))
+    I --> J[Escolher Pizza]
+    J --> C
+
+    A -- "Clique em Contato" --> K((Página de Contato))
+    K --> L{Formulário Preenchido?}
+    L -- Sim --> M[Envia para Backend]
+    M --> N{Validação e Processamento}
+    N -- Sucesso --> O[Confirmação ao Usuário]
+    L -- Não --> K
+
+    A -- "Clique em Trabalhe Conosco" --> P((Página Trabalhe Conosco))
+    P --> Q{Formulário Preenchido?}
+    Q -- Sim --> R[Envia Currículo/Sugestão para Backend]
+    R --> S{Validação e Salvamento}
+    S -- Sucesso --> T[Confirmação ao Usuário]
+    Q -- Não --> P
+
+```
+
 ## Tecnologias Utilizadas
 
 * **Frontend:** 
@@ -27,13 +59,12 @@ Para visualizar o esboço inicial da arquitetura e o fluxo da aplicação, acess
     * HTML5
     * CSS3
     * JavaScript
-* **Backend:** (Exemplo)
-    * Node.js
-    * Express
+* **Backend:**
+    * Spring
     * MongoDB
 * **Outras Ferramentas:** (Exemplo)
     * Git
     * GitHub
 ## Autores
 
-Lucas Mateus, Rafael Carvalho e Thiago Vinicius
+Rafael Carvalho e Thiago Vinicius

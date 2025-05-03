@@ -21,38 +21,33 @@ Para visualizar o esboço inicial da arquitetura e o fluxo da aplicação, acess
 [https://mm.tt/app/map/3682693930?t=isPg9SDs37](https://mm.tt/app/map/3682693930?t=isPg9SDs37)
 
 
-## Fluxograma - Menus
-```mermaid
 flowchart TD
     A((Página Inicial)) --> B(Promoções Exibidas)
-    B -- Clique em promoção --> C[Carrinho de Compras]
-    C --> D{Forma de Pagamento?}
-    D --> E(Envia Pedido para Backend)
+    B -- "Clique em promoção" --> C[Carrinho de Compras]
+    C --> D{Forma de Pagamento}
+    D --> E[Envia Pedido para Backend]
     E --> F{Validação de Pagamento}
     F -- Sucesso --> G[Confirmação do Pedido ao Usuário]
     F -- Falha --> H[Erro e Retorno ao Carrinho]
 
-    %% Alternativa: Página de Pedidos
-    A2((Página de Pedidos)) --> I[Escolher Pizza]
-    I --> C
+    A -- "Clique em Pedidos" --> I((Página de Pedidos))
+    I --> J[Escolher Pizza]
+    J --> C
 
-    %% Alternativa: Menu/Cabeçalho
-    A -- Clique "Pedidos" --> A2
-    A -- Clique "Contato" --> L[(Página de Contato ou Trabalhe Conosco)]
-    L --> M{Formulário Preenchido?}
-    M -- Sim --> N[Envia para Backend]
-    N --> O{Validação e Processamento}
-    O --> P[Confirmação ao Usuário]
-    M -- Não --> Q[Fim]
+    A -- "Clique em Contato" --> K((Página de Contato))
+    K --> L{Formulário Preenchido?}
+    L -- Sim --> M[Envia para Backend]
+    M --> N{Validação e Processamento}
+    N -- Sucesso --> O[Confirmação ao Usuário]
+    L -- Não --> K
 
-    L -- Clique "Trabalhe Conosco" --> R[(Formulário Trabalhe Conosco)]
-    R --> S{Formulário Preenchido?}
-    S -- Sim --> T[Envia Currículo/Sugestão para Backend]
-    T --> U{Validação e Salvamento}
-    U --> V[Confirmação ao Usuário]
-    S -- Não --> Q
+    A -- "Clique em Trabalhe Conosco" --> P((Página Trabalhe Conosco))
+    P --> Q{Formulário Preenchido?}
+    Q -- Sim --> R[Envia Currículo/Sugestão para Backend]
+    R --> S{Validação e Salvamento}
+    S -- Sucesso --> T[Confirmação ao Usuário]
+    Q -- Não --> P
 
-```
 
 ## Tecnologias Utilizadas
 
